@@ -10,6 +10,7 @@ typedef long double ld;
 
 class student{
     int rollnumber;
+    int age;
 };
 
 

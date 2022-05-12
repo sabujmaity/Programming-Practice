@@ -39,6 +39,9 @@ int main(){
     s2 -> age = 21;               // "This pointer"
     s2 -> rollnumber = 123;
     cout << (*s2).age << " " << (*s2).rollnumber ;
+    student *p3 = new student;
+    student p4;
+    p4 = *p3;
 
 
 

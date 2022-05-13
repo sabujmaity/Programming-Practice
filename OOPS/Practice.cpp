@@ -35,6 +35,7 @@ int main(){
     (*s2).age = 21;
     (*s2).rollnumber = 122;
     cout << (*s2).age << " " << (*s2).rollnumber << "\n";
+    
     // Other Way to write
     s2 -> age = 21;               // "This pointer"
     s2 -> rollnumber = 123;

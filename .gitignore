@@ -1,0 +1,12 @@
+.cph
+*.txt
+*.pdf
+*.exe
+*.log
+**/logs
+**/logs/debug.log
+*.log
+*.log
+!important/*.log
+trace.*
+*.bin

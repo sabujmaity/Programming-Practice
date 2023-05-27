@@ -14,6 +14,8 @@ int max_pieces(int length, int a, int b, int c){
     if ( length < 0)
         return -1;
     
+    // As normal max we are able to compare only two values
+    // I used iterator and used the elements as list
     int pieces = std :: max({ max_pieces( length - a,a,b,c), 
     max_pieces( length - b,a,b,c), 
     max_pieces( length - c,a,b,c)});

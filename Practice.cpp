@@ -18,7 +18,8 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    cout << "Hello World Let's go";
+    long long int c = 1e24;
+    cout << c << endl;
     
 
 }

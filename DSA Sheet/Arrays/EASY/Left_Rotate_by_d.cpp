@@ -4,8 +4,8 @@ using namespace std;
 
 typedef long long ll;
 typedef long double ld;
-// Naive Approach ( Three Traversal )
 void left_rotateby_d( int *input, int size, int d){
+// Naive Approach ( Three Traversal )
     int temp[d];
     for( int i=0;i<d; i++){
         temp[i]=input[i];
@@ -16,7 +16,9 @@ void left_rotateby_d( int *input, int size, int d){
     for(int i=0;i<d;i++){
         input[size-d+i] = temp[i];
     }
+// Better Approach
 }
+
 
 
 int main(){

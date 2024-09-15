@@ -5,6 +5,7 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
+// Brute Force Method:
 int largest_element(int *input, int size){
     int max=input[0];
     for( int i=1;i<size;i++){
@@ -12,6 +13,7 @@ int largest_element(int *input, int size){
             max = input[i];
     }
     return max;
+
 }
 int main(){
     ios_base::sync_with_stdio(false);

@@ -5,7 +5,7 @@ using namespace std;
 #define pb push_back
 #define F first
 #define S second
-typedef long long ll;
+typedef long long int ll;
 typedef long double ld;
 
 
@@ -17,7 +17,7 @@ int main(){
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout); 
     #endif
-    int a;
+    ll a; // The earlier code was ok but due to overflow it was not able to calculate
     cin >> a;
     cout << a << " ";
     while(a > 1){

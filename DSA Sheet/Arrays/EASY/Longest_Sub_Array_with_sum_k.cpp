@@ -16,8 +16,6 @@ int subarray_sum( int arr[], int n, int target){
     return length;
 }
 
-
-
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

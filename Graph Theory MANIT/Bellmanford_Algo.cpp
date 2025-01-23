@@ -11,14 +11,14 @@ typedef long long ll;
 typedef long double ld;
 
 vector<int> bellman_ford(int V, vector<vector<int>>& edges, int S) {
-        vector<int> result(V, 1e8);
+        vector<int> result(V, INT_MAX);
         result[S] = 0;
         for(int c = 1; c<=V-1; c++) {
             for(auto &edge : edges) {
                 int u = edge[0];
                 int v = edge[1];
                 int w = edge[2];
-                if(result[u] != 1e8 && result[u] + w < result[v]) {
+                if(result[u] != INT_MAX && result[u] + w < result[v]) {
                     result[v] = result[u] + w;
                 } 
             }
@@ -28,7 +28,7 @@ vector<int> bellman_ford(int V, vector<vector<int>>& edges, int S) {
                 int v = edge[1];
                 int w = edge[2];
                 
-                if(result[u] != 1e8 && result[u] + w < result[v]) {
+                if(result[u] != INT_MAX && result[u] + w < result[v]) {
                     return {-1};
                 }
         }

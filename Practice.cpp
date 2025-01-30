@@ -1,21 +1,12 @@
-#include<bits/stdc++.h>
+	
+#include <iostream>
 using namespace std;
-
-
-typedef long long ll;
-typedef long double ld;
-
-
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout); 
-    #endif
-
-    cout<<"Hello World";
-    
-
+ 
+int main() {
+    if (__cplusplus == 202002L) std::cout << "C++20\n";
+    else if (__cplusplus == 201703L) std::cout << "C++17\n";
+    else if (__cplusplus == 201402L) std::cout << "C++14\n";
+    else if (__cplusplus == 201103L) std::cout << "C++11\n";
+    else if (__cplusplus == 199711L) std::cout << "C++98\n";
+    else std::cout << "pre-standard C++\n";
 }

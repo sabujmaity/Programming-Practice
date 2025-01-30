@@ -21,7 +21,7 @@ vector <int> dijkstra(int V, vector<vector<int>> adj[], int S) {
 		    pq.pop();
 		    for(auto &vec : adj[node]) {
 			int adjNode = vec[0];
-			int dist    = vec[1];
+			int dist = vec[1];
 			if(d + dist < result[adjNode]) {
 			    result[adjNode] = d + dist;
 			    pq.push({d+dist, adjNode});

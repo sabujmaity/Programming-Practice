@@ -19,26 +19,16 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    int A,B,C;
-    cin >> A >> B >> C;
-    int X = A, Y = B , Z = C;
-    if(A>B)
-        swap(A,B);
-    if(B>C)
-        swap(B,C);
-    if(A>B)
-        swap(B,A);
-    
-    cout << A << endl;
-    cout << B << endl;
-    cout << C << endl;
-    cout << endl;
-    cout << X << endl;
-    cout << Y << endl;
-    cout << Z << endl;
-    
+    //Let's Code
+    int t;
+    cin>>t;
+    while(t--){
+        string str;
+        cin >> str;
+        string plural = str.substr(0, str.length() - 2);
+        plural +='i';
+        cout << plural << endl;
+    }
 
-    
-    
 
 }

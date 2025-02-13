@@ -29,9 +29,9 @@ long long binpow(long long a, long long b) {
         return 1;
     int res = binpow(a, b / 2);
     if (b&1) // To check whether its odd
-        return (a * ((res * 1LL * res) % M)) % M;
+        return a * (res * 1ll * res);
     else
-        return (res * 1LL * res) % M;
+        return (res * 1ll * res) ;
 }
 
 int main(){

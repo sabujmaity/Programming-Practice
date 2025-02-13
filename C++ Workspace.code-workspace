@@ -21,7 +21,8 @@
 			"unordered_map": "cpp",
 			"unordered_set": "cpp",
 			"vector": "cpp",
-			"random": "cpp"
+			"random": "cpp",
+			"cmath": "cpp"
 		},
 		"liveServer.settings.port": 5503
 	}

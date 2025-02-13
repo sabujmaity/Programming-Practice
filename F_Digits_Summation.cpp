@@ -19,24 +19,11 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    int A,B,C;
-    cin >> A >> B >> C;
-    int X = A, Y = B , Z = C;
-    if(A>B)
-        swap(A,B);
-    if(B>C)
-        swap(B,C);
-    if(A>B)
-        swap(B,A);
-    
-    cout << A << endl;
-    cout << B << endl;
-    cout << C << endl;
-    cout << endl;
-    cout << X << endl;
-    cout << Y << endl;
-    cout << Z << endl;
-    
+    string A,B;
+    cin >> A >> B;
+
+    int x = A[A.size()-1] - '0', y = B[B.size()-1] - '0';
+    cout << x + y ;
 
     
     

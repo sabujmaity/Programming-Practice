@@ -6,7 +6,7 @@
 	  "using namespace std;",
 	  "",
 	  "#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);",
-	  "#define endl \"\n\" ",
+	  "#define nline \"\n\" ",
 	  "#define fo(i,n) for(i=0;i<n;i++)",
 	  "#define pb push_back",
 	  "#define F first",

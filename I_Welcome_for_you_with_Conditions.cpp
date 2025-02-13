@@ -10,6 +10,11 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
+long long sum( long long num){
+    long long ans = num * 1LL * (num + 1)/2 ;
+    return ans;
+}
+
 
 int main(){
     IOS;
@@ -19,26 +24,19 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    int A,B,C;
-    cin >> A >> B >> C;
-    int X = A, Y = B , Z = C;
-    if(A>B)
-        swap(A,B);
-    if(B>C)
-        swap(B,C);
-    if(A>B)
-        swap(B,A);
-    
-    cout << A << endl;
-    cout << B << endl;
-    cout << C << endl;
-    cout << endl;
-    cout << X << endl;
-    cout << Y << endl;
-    cout << Z << endl;
-    
+    //Let's Code
+    int t;
+    cin>>t;
+    while(t--){
+        int l,r;
+        cin >> l >> r;
+        if( l > r){
+            swap(l,r);
+        }
+        ll result = sum(r) - sum(l-1);
+        cout << result << endl;
+        
+    }
 
-    
-    
 
 }

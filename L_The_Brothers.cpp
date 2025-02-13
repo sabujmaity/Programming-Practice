@@ -19,24 +19,12 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    int A,B,C;
-    cin >> A >> B >> C;
-    int X = A, Y = B , Z = C;
-    if(A>B)
-        swap(A,B);
-    if(B>C)
-        swap(B,C);
-    if(A>B)
-        swap(B,A);
-    
-    cout << A << endl;
-    cout << B << endl;
-    cout << C << endl;
-    cout << endl;
-    cout << X << endl;
-    cout << Y << endl;
-    cout << Z << endl;
-    
+    string A, B, C, D;
+    cin >> A >> B >> C >> D;
+    if (B == D)
+        cout << "ARE Brothers";
+    else
+        cout << "NOT";
 
     
     

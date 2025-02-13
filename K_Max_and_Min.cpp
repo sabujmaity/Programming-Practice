@@ -10,13 +10,7 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-void print_v(vector<pair<int,int>> &v_pair){
-    for (int i = 0 ; i < v_pair.size(); i++){
-        cout << v_pair[i].first << " " << v_pair[i].second;
-        cout << endl;
-    }
-    
-}
+
 int main(){
     IOS;
 
@@ -25,17 +19,20 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    // Vectors of Pairs
-    vector < pair < int , int > > v_pair;
-    int n ;
-    cin >> n ;
-    for ( int i = 0; i < n ; i++){
-        int x,y;
-        cin >> x >> y;
-        v_pair.push_back({x,y});
+    int A,B,C;
+    cin >> A >> B >> C;
+    int maximum = INT_MIN;
+    if ( A > B ){
+        swap(A,B);
+    }
+    if ( B > C){
+        swap(B,C);
+    }
+    if ( A > B){
+        swap(A,B);
     }
 
-    print_v(v_pair);
+    cout << A << " " << C;
 
     
     

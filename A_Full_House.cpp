@@ -23,15 +23,23 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
+    vector < ll > freq(14,0);
+    for( int i = 0 ; i < 5; i++){
+        ll x ; cin >> x;
+        freq[x]++;
+    }
+    // Checking all the pairs whether these two values exist
+    for( int i = 1; i <=13; i++){
+        for(int j = 1; j<=13; j++){
+            if(freq[i]==2 && freq[j]==3){
+                cout << "Yes";
+                return 0;
+            }
+        }
+    }
+    cout << "No";
+
     
-    ll n,m,a;
-    cin >> n >> m >> a;
-
-    // Learning : ceil(a/b) = (a+b-1/b) better to use this than ceil(a/b)
-    ll x = (n+a-1)/a;
-    ll y = (m+a-1)/a;
-
-    cout << x * y;
-    return 0;
+    
 
 }

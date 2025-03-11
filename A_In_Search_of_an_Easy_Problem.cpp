@@ -23,15 +23,22 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
+    int n; cin >> n;
+    bool flag = false;
+    while(n--){
+        int p;
+        cin >> p;
+        if(p==1){
+            flag = true;
+        }
+    }
+    if(flag){
+        cout << "HARD";
+    }
+    else
+        cout << "EASY";
+
     
-    ll n,m,a;
-    cin >> n >> m >> a;
-
-    // Learning : ceil(a/b) = (a+b-1/b) better to use this than ceil(a/b)
-    ll x = (n+a-1)/a;
-    ll y = (m+a-1)/a;
-
-    cout << x * y;
-    return 0;
+    
 
 }

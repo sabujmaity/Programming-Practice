@@ -23,15 +23,23 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    
-    ll n,m,a;
-    cin >> n >> m >> a;
-
-    // Learning : ceil(a/b) = (a+b-1/b) better to use this than ceil(a/b)
-    ll x = (n+a-1)/a;
-    ll y = (m+a-1)/a;
-
-    cout << x * y;
+    int input; cin >> input;
+    int hour = 21, min = 0;
+    while(input--){
+        min++;
+        if( min == 60){
+            min = 0;
+            hour++;
+        }
+    }
+    cout<<hour<<":";
+    if( min < 10){
+        cout << '0';
+    }
+    cout << min;
     return 0;
+
+    
+    
 
 }

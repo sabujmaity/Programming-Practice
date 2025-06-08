@@ -32,3 +32,24 @@ int main(){
     
 
 }
+
+Where:
+
+    V = number of vertices (numbered 0 to V-1)
+
+    E = number of edges
+
+    Each line ui vi wi represents an edge from ui to vi with weight wi
+
+    S = source vertex for Dijkstra’s algorithm
+
+📘 Sample Input
+
+5 6
+0 1 4
+0 2 1
+2 1 2
+1 3 1
+2 3 5
+3 4 3
+0

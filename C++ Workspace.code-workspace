@@ -23,7 +23,8 @@
 			"vector": "cpp",
 			"random": "cpp",
 			"cmath": "cpp",
-			"ostream": "cpp"
+			"ostream": "cpp",
+			"chrono": "cpp"
 		},
 		"liveServer.settings.port": 5503
 	}

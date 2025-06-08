@@ -18,23 +18,13 @@ const int mod = 1e9+7;
 int binpow( int a, int b, int mod){
     if( b == 0){
         return 1;
-    } else if( b % 2 == 1){
-        return (a*binpow(a,b-1,mod)) % mod;
+    } else if( b%2==1){
+        return (a * binpow(a,b-1,mod))%mod;
     } else {
-        int temp =  a*a % mod;
-        return binpow( temp, b/2, mod) % mod;
+        int temp = a*a%mod;
+        return binpow(temp,b/2,mod)%mod;
     }
-}
 
-int inverse( int b, int mod ){
-    return binpow( b % mod, mod-2,mod);
-}
-
-// Using Fermat's Little Theorem 
-int divide_modulo( int a , int b , int mod){
-    int inverse_b = inverse( b, mod);
-    int result = (a * inverse_b) % mod;
-    return result;
 }
 
 signed main(){
@@ -45,14 +35,15 @@ signed main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    //Let's Code
-    // a+(b-f)^2+(c/d)^e 
-    int a,b,c,d,e,f; 
-    cin >> a >> b >> c >> d >> e >> f;
+    int n; 
+    cin>>n;
 
-    int temp = ( b%mod -f%mod)%mod;
-    temp = temp * temp % mod;
+    int result = binpow(2,n,mod);
+    cout << result;
 
 
+
+    
+    
 
 }

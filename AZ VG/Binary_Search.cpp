@@ -7,21 +7,29 @@ using namespace std;
 #define pb push_back
 #define F first
 #define S second
-typedef long long ll;
+#define int long long
 typedef long double ld;
-typedef vector<int> vi;
-typedef vector<vector<int>> vvi;
-typedef vector<ll> vll;
-typedef vector<vector<ll>> vvll;
+typedef vector<signed> vi;
+typedef vector<vector<signed>> vvi;
+typedef vector<int> vll;
+typedef vector<vector<int>> vvll;
+const int mod = 1e9+7;
 
 
-int main(){
+signed main(){
     IOS;
 
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout); 
     #endif
+
+    int x; cin >> x;
+    int lo = 0, hi = x;
+    
+
+
+
 
     
     

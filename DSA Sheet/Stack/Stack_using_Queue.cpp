@@ -32,7 +32,6 @@ int main(){
     Sq1.push(7);
     Sq1.push(3);
 
-
     cout << Sq1.pop_SQ() << '\n';
     cout << Sq1.pop_SQ();
 

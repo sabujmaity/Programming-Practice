@@ -24,7 +24,9 @@
 			"random": "cpp",
 			"cmath": "cpp",
 			"ostream": "cpp",
-			"chrono": "cpp"
+			"chrono": "cpp",
+			"span": "cpp",
+			"type_traits": "cpp"
 		},
 		"liveServer.settings.port": 5503
 	}

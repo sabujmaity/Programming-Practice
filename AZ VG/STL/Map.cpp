@@ -18,7 +18,7 @@ signed main(){
     //cout << "Age of Ankita :" << " " << ages["Ankita"];
 
     for(auto it = ages.begin(); it != ages.end(); ++it){
-        cout << it->first << " " << it -> second << nline;
+        cout << it->first << " " << it->second << nline;
     }
 
     /* To find the element using Key it takes

@@ -25,10 +25,9 @@ int main(){
     long long n,m; cin >> n >> m;
     int ans = 0;
     // a^2 + b now a can have max sqrt(a) value
-    for( ll i = 0; i*i <=n; i++){
-        for ( ll j = 0 ; j*j <=m ; j++){
-            if( ((i*i+j) == n) && ((j*j+i)==m))
-                ans++;
+    for ( int i = 0 ; i*i <= n; ++i){
+        for ( int j = 0; j*j <= m; ++j){
+            if(((i*i + j)==n) && ((i + j*j)==m)) ans++;
         }
     }
     cout << ans;

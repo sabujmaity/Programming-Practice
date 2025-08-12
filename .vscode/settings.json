@@ -4,6 +4,8 @@
         "bitset": "cpp",
         "algorithm": "cpp",
         "format": "cpp",
-        "bit": "cpp"
+        "bit": "cpp",
+        "ostream": "cpp",
+        "cmath": "cpp"
     }
 }

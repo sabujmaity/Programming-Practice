@@ -3,8 +3,8 @@ using namespace std;
 
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define nline "\n" 
-#define fo(i,n) for(int i = 0;i<n;i++)
 #define int long long
+#define fo(i,n) for(int i = 0;i<n;i++)
 #define pb push_back
 #define F first
 #define S second
@@ -19,26 +19,7 @@ long double pi = acos(-1.0); const double EPS = 1e-9;
 int myceil(int a , int b){return (a+b-1)/b;}
 int myround(int a , int b){return (2*a+b)/(2*b);}
 
-/* int solve(){
-    int sum =0;
-    for( int i = 0; i < 3; ++i){
-        int x;cin>>x;
-        sum+=x;
-    }
-    return sum;
-} */
-
 void solve(){
-    int n,ans = 0;
-    cin >> n;
-    for( int i = 0; i < n; ++i){
-        int a , b , c;
-        cin >> a >> b >> c;
-        if( a + b + c >= 2){
-            ans++;
-        }
-    }
-    cout << ans;
     
 }
 
@@ -50,17 +31,25 @@ signed main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    /* //Let's Code
-    int t,sol=0;
-    cin>>t;
-    while(t--){
-        if(solve()>=2){
-            sol++;
+    int size; cin >> size;
+    vector<int>input(size);
+    for( int i = 0; i < size; ++i){
+        cin >> input[i];
+    }
+
+    for( int i = size-1; i>=0; --i){
+        for( int j = 0; j<=i-1; ++j){
+            if( input[j] > input[j+1]){
+                swap(input[j+1],input[j]);
+            }
         }
     }
-    cout << sol; */
-    solve();
-    return 0;
 
+    for( int i = 0; i < size; ++i){
+        cout << input[i] << " ";
+    }
+    
+    
+    
 
 }

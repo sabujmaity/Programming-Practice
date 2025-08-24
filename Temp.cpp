@@ -1,44 +1,57 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define nline "\n" 
-#define fo(i,n) for(int i = 0;i<n;i++)
-#define int long long
-#define pb push_back
-#define F first
-#define S second
-typedef long double ld;
-typedef vector<signed> vi;
-typedef vector<vector<signed>> vvi;
-typedef vector<int> vll;
-typedef vector<vector<int>> vvll;
-const int mod = 1e9+7;
-long double pi = acos(-1.0); const double EPS = 1e-9;
+vector<long long> generateValidKeys(long long limit) {
+    long long maxPrime = sqrt(limit) + 1;
+    vector<bool> isPrime(maxPrime + 1, true);
+    isPrime[0] = isPrime[1] = false;
 
-int myceil(int a , int b){return (a+b-1)/b;}
-int myround(int a , int b){return (2*a+b)/(2*b);}
-
-void solve(){
-    
-}
-
-signed main(){
-    IOS;
-    cin.ignore();
-
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout); 
-    #endif
-
-    //Let's Code
-    int t;
-    cin>>t;
-    while(t--){
-        solve();
-
+    // Sieve of Eratosthenes
+    for (long long i = 2; i * i <= maxPrime; i++) {
+        if (isPrime[i]) {
+            for (long long j = i * i; j <= maxPrime; j += i) {
+                isPrime[j] = false;
+            }
+        }
     }
 
+    // Store squares of primes
+    vector<long long> validKeys;
+    for (long long i = 2; i <= maxPrime; i++) {
+        if (isPrime[i]) {
+            long long sq = i * 1LL * i;
+            if (sq <= limit) validKeys.push_back(sq);
+        }
+    }
+    sort(validKeys.begin(), validKeys.end());
+    return validKeys;
+}
 
+vector<int> getValidKey(vector<long long>& numbers) {
+    long long maxLimit = *max_element(numbers.begin(), numbers.end());
+    vector<long long> validKeys = generateValidKeys(maxLimit);
+
+    vector<int> result;
+    for (long long num : numbers) {
+        // Count numbers ≤ num using upper_bound
+        int count = upper_bound(validKeys.begin(), validKeys.end(), num) - validKeys.begin();
+        result.push_back(count);
+    }
+    return result;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    cin >> n;
+    vector<long long> numbers(n);
+    for (int i = 0; i < n; i++) cin >> numbers[i];
+
+    vector<int> ans = getValidKey(numbers);
+
+    for (int x : ans) cout << x << "\n";
+
+    return 0;
 }

@@ -18,7 +18,15 @@ int main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
+    int size; cin >> size;
+    vector<int> nums;
+    for( int i = 0; i < size; ++i){
+        cin >> nums[i];
+    }
     
-    
+    vector<int> hash(size+1);
+    for(int i = 0; i <size; ++i){
+        hash[nums[i]] = i;
+    }
 
 }

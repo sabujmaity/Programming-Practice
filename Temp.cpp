@@ -1,57 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-vector<long long> generateValidKeys(long long limit) {
-    long long maxPrime = sqrt(limit) + 1;
-    vector<bool> isPrime(maxPrime + 1, true);
-    isPrime[0] = isPrime[1] = false;
-
-    // Sieve of Eratosthenes
-    for (long long i = 2; i * i <= maxPrime; i++) {
-        if (isPrime[i]) {
-            for (long long j = i * i; j <= maxPrime; j += i) {
-                isPrime[j] = false;
-            }
-        }
-    }
-
-    // Store squares of primes
-    vector<long long> validKeys;
-    for (long long i = 2; i <= maxPrime; i++) {
-        if (isPrime[i]) {
-            long long sq = i * 1LL * i;
-            if (sq <= limit) validKeys.push_back(sq);
-        }
-    }
-    sort(validKeys.begin(), validKeys.end());
-    return validKeys;
-}
-
-vector<int> getValidKey(vector<long long>& numbers) {
-    long long maxLimit = *max_element(numbers.begin(), numbers.end());
-    vector<long long> validKeys = generateValidKeys(maxLimit);
-
-    vector<int> result;
-    for (long long num : numbers) {
-        // Count numbers ≤ num using upper_bound
-        int count = upper_bound(validKeys.begin(), validKeys.end(), num) - validKeys.begin();
-        result.push_back(count);
-    }
-    return result;
-}
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    int n;
-    cin >> n;
-    vector<long long> numbers(n);
-    for (int i = 0; i < n; i++) cin >> numbers[i];
-
-    vector<int> ans = getValidKey(numbers);
-
-    for (int x : ans) cout << x << "\n";
-
+    vector<long long> A;
+    long long x;
+    // read all ints
+    while (cin >> x) A.push_back(x);
+    vector<long long> arr;
+    if (A.size() >= 1 && A.size() >= (size_t)(A[0] + 1)) {
+        long long n = A[0];
+        arr.assign(A.begin()+1, A.begin()+1+n);
+    } else {
+        arr = A;
+    }
+    int n = arr.size();
+    vector<int> ans(20, 0);
+    for (int b = 0; b < 20; ++b) {
+        long long mask = 1LL << b;
+        int cnt = 0;
+        for (long long v : arr) if ((v & mask) == 0) ++cnt;
+        ans[b] = cnt;
+    }
+    for (int i = 0; i < 20; ++i) {
+        if (i) cout << ' ';
+        cout << ans[i];
+    }
+    cout << '\n';
     return 0;
 }

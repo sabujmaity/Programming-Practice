@@ -33,7 +33,7 @@ signed main(){
     string word;
     while(ss >> word){
         reverse(word.begin(), word.end());
-        cout << word << nline;
+        cout << word << " ";
     }
 
     return 0;

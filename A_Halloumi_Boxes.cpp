@@ -3,8 +3,8 @@ using namespace std;
 
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define nline "\n" 
-#define int long long
 #define fo(i,n) for(int i = 0;i<n;i++)
+#define int long long
 #define pb push_back
 #define F first
 #define S second
@@ -19,16 +19,24 @@ long double pi = acos(-1.0); const double EPS = 1e-9;
 int myceil(int a , int b){return (a+b-1)/b;}
 int myround(int a , int b){return (2*a+b)/(2*b);}
 
-int binpow(int a , int b){
-    if(b == 0){
-        return 1;
-    } else if( b % 2 == 1){
-        return a * binpow(a, b - 1);
+void solve(){
+    int n, k; cin >> n >> k;
+    vector<int> input(n);
+    for( int i = 0; i < n; ++i){
+        cin >> input[i];
     }
-    int temp = a * a;
-    return binpow(temp,b/2);
+
+    int flag = 1;
+    for( int i = 1 ; i < n; ++i){
+        if(input[i]<input[i-1] && k < 2){
+            flag = 0;
+            break;
+        }
+    }
+    if(flag) cout << "YES" <<nline;
+    else cout <<"NO" << nline;
 }
-    
+
 signed main(){
     IOS;
 
@@ -37,17 +45,13 @@ signed main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    int n; cin >> n;
-    int sum = 0;
-    while(n){
-        sum += binpow(2,n);
-        n--;
+    //Let's Code
+    int t;
+    cin>>t;
+    while(t--){
+        solve();
+
     }
-    cout << sum;
 
-
-
-    
-    
 
 }

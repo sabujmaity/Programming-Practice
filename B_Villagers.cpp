@@ -19,16 +19,20 @@ long double pi = acos(-1.0); const double EPS = 1e-9;
 int myceil(int a , int b){return (a+b-1)/b;}
 int myround(int a , int b){return (2*a+b)/(2*b);}
 
-int binpow(int a , int b){
-    if(b == 0){
-        return 1;
-    } else if( b % 2 == 1){
-        return a * binpow(a, b - 1);
+void solve(){
+    int n;cin >> n;
+    vector<int> a(n);
+    fo(i, n) {
+        cin >> a[i];
     }
-    int temp = a * a;
-    return binpow(temp,b/2);
+    sort(a.begin(), a.end());
+    int cst = 0;
+    for (int i = n - 1; i>= 0; i-=2) {
+        cst += a[i];
+    }
+    cout<< cst <<nline;
 }
-    
+
 signed main(){
     IOS;
 
@@ -36,18 +40,10 @@ signed main(){
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout); 
     #endif
-
-    int n; cin >> n;
-    int sum = 0;
-    while(n){
-        sum += binpow(2,n);
-        n--;
+    
+    int t;
+    cin >> t;
+    while(t--){
+        solve();
     }
-    cout << sum;
-
-
-
-    
-    
-
 }

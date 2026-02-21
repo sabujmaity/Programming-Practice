@@ -3,6 +3,7 @@ using namespace std;
 
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define nline "\n" 
+#define nullptr NULL 
 #define int long long
 #define fo(i,n) for(int i = 0;i<n;i++)
 #define pb push_back
@@ -19,16 +20,23 @@ long double pi = acos(-1.0); const double EPS = 1e-9;
 int myceil(int a , int b){return (a+b-1)/b;}
 int myround(int a , int b){return (2*a+b)/(2*b);}
 
-int n, t;
-vector<int> arr;
-int check(int mid){
-    // can we produce t prod in mid sec
-    int total_prod = 0;
-    fo(i,n){
-        total_prod += mid/arr[i];
+void solve(){
+    int size; cin >> size;
+    vector <int> v;
+    fo(i,size){
+        int ele; cin >> ele;
+        v.pb(ele);
     }
-    if(total_prod >= t) return 1;
-    return 0;
+    int move = 0;
+    for( int i = 1; i<size; ++i){
+        if(v[i]<v[i-1]){
+            move += v[i-1] - v[i];
+            v[i] = v[i-1]; // You did a silly mistake remember to read the question
+        }
+    }
+    cout << move;
+    return;
+
 }
 
 signed main(){
@@ -39,24 +47,7 @@ signed main(){
     freopen("output.txt", "w", stdout); 
     #endif
 
-    cin >> n >> t;
-    arr.resize(n);
-    fo(i,n){
-        cin >> arr[i];
-    }
-
-    int low = 0, high = t*arr[0], ans = -1;
-    while(low <= high){
-        int mid = low + (high-low)/2;
-        if(check(mid)==1){
-            ans = mid;
-            high = mid - 1;
-        }else{
-            low = mid + 1;
-        }
-    }
-    cout << ans;
-    
+    solve();
     
     
     

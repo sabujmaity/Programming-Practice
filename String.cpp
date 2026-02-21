@@ -37,6 +37,14 @@ signed main(){
     }
 
     return 0;
+
+    string sentence;
+    stringstream ss (sentence);
+    string word;
+    while( ss >> word){
+        reverse ( word.begin(), word.end());
+        cout << word << " ";
+    }
     
     
     
